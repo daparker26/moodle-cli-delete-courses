@@ -82,9 +82,7 @@ if ($options['help']) {
 
     echo $help;
     die;
-}
-
-if ($options['courseid']) {
+} elseif ($options['courseid']) {
 	
 	$id = cli_input('Enter the course id');
 	$id = clean_param($id, PARAM_INT);
