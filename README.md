@@ -19,13 +19,12 @@ If by editingteacher, you must enter the user ID. This script will search
 for courses in which the user is enrolled as editingteacher. If there are 
 multiple editingteacher users in a course, the course will not be deleted.
 
-Options:
--h, --help            Print out this help
--c, --category        Deletes courses by category
--t, --teacher         Deletes courses by teacher
--id, --courseid       Deletes course by id
--f, --force           Force option. Won't prompt for individual courses 
-					  when deleting by category or teacher.
+Options:<br>
+-h, --help | Print out this help<br>
+-c, --category | Deletes courses by category<br>
+-t, --teacher | Deletes courses by teacher<br>
+-id, --courseid | Deletes course by id<br>
+-f, --force | Force option. Won't prompt for individual courses when deleting by category or teacher.<br>
 
-Example:
-\$sudo -u www-data /usr/bin/php admin/cli/delete_courses.php
+Example:<br>
+$sudo -u www-data /usr/bin/php admin/cli/delete_courses.php
