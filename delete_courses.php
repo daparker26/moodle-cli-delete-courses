@@ -84,7 +84,11 @@ if ($options['help']) {
     die;
 } elseif ($options['courseid']) {
 	
-	$id = cli_input('Enter the course id');
+	if ( ! empty( $options['courseid'] ) ) {
+		$id = $options['courseid'];
+	} else {
+		$id = cli_input('Enter the course id');
+	}
 	$id = clean_param($id, PARAM_INT);
 	
 	if ($id < 1) cli_error("Invalid course number. Aborting..\n");
@@ -95,8 +99,13 @@ if ($options['help']) {
 		throw cli_error('The course cannot be found. Ensure you are using the correct ID number');
 	}
 	
-	$prompt = 'Delete "' . $course->fullname . ' (' . $course->shortname . ')"? (Y/N)';
-	$input = cli_input($prompt);
+	if ( (bool) $options['force'] ) {
+		// The --force flag has been set.
+		$input = 'y';
+	} else {
+		$prompt = 'Delete "' . $course->fullname . ' (' . $course->shortname . ')"? (Y/N)';
+		$input = cli_input($prompt);
+	}
 	$input = clean_param($input, PARAM_ALPHA);
 	
 	if (strtolower($input) == 'y') {

@@ -22,9 +22,10 @@ multiple editingteacher users in a course, the course will not be deleted.
 Options:<br>
 -h, --help | Print out this help<br>
 -c, --category | Deletes courses by category<br>
+-c={id}, --category={id} | Deletes course with id {id}
 -t, --teacher | Deletes courses by teacher<br>
 -id, --courseid | Deletes course by id<br>
--f, --force | Force option. Won't prompt for individual courses when deleting by category or teacher.<br>
+-f, --force | Force option. Won't prompt for individual courses when deleting by courseid, category, or teacher.<br>
 
 Example:<br>
 $sudo -u www-data /usr/bin/php admin/cli/delete_courses.php
